@@ -15,7 +15,10 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom CSS -->
-        <link href="css/shop-homepage.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,417 +29,247 @@
 
     </head>
 
-    <body>
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Bravo </a>
+    <body ng-app="aszapp" ng-controller="AppCtrl">
+        <!-- Start links section -->
+        <header class="clearfix">
+            <div class="top-bar" style="display: block;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <ul class="contact-details">
+                                <li><a href="#aboutus">{{translation.about_us}}</a></li>
+                                <li><a href="#news">{{translation.news}}</li>
+                                <li><a href="#blog">{{translation.blog}}</a></li>
+                                <li><a href="#contactus">{{translation.contact_us}}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul class="contact-details">
+                                <li><a href="#checkout">  <i class="fa fa-check">{{translation.check_out}}</i> </a></li>
+                                <li class="pull-right"><a href="#"> {{translation.toll_free}}<b class="bravo-number"> 333 444 555</b></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-2 lang-change">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img src={{selectedLanguage.url}}> {{selectedLanguage.name}} <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li ng-click="translate('en')"><a href="#" >{{translation.en_lang}}</a></li>
+                                    <li ng-click="translate('az')"><a href="#">{{translation.az_lang}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .row -->
                 </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ABOUT US
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Vision </li>
-                                    <li>Mission</li>
-                                    <li>Values</li>
-                                    <li>Corporate Social Responsibilities</li>
-                                    <li>Legal / Corporate Responsibilities</li>
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">E-NEWSLETTER SUBSCRIBTION
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Enter your email address  </li>
-
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OUR PRODUCTS
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Our Quality standards </li>
-                                    <li> Our product lines ( categories)  </li>
-                                    <li> Locally grown (local growers map) </li>
-
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">NEWS
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> News  </li>
-                                    <li> Events   </li>
-                                    <li> Press Room (form) </li>
-
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OUR BLOG
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> A  </li>
-                                    <li> B   </li>
-                                    <li> C</li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">LEAFLET
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Leaflet  </li>
-
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">RECIPEES
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Featured   </li>
-                                    <li> Top rated    </li>
-                                    <li> Newest    </li>
-                                    <li> &nbsp;    </li>
-                                    <li> Local  / Baku/ Ganja / Lenkeran     </li>
-                                    <li> International  / Italian / Chinese / French     </li>
-                                    <li> Healthy Food  </li>
-                                    <li> Seasonal </li>
-                                    <li> Kids Menu  </li>
-                                    <li> My saved recipe /My favorites  </li>
-
-
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">LOYALTY PROGRAM (future project) 
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> A   </li>
-                                    <li> A   </li>
-                                    <li> A   </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">ONLINE ORDERING (future project)  
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> A   </li>
-                                    <li> A   </li>
-                                    <li> A   </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CONTACT US
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li> Q & A   </li>
-                                    <li> Potential Suppliers (form)    </li>
-                                    <li> Careers no   </li>
-                                    <li>Our stores (+Map)   </li>
-                                    <li>Find a store / Select Your Location / Select Your Store    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CONNECT US
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li>Mob App </li>
-                                    <li> Facebook   </li>
-                                    <li> Instagram  </li>
-                                    <li>Twitter  </li>
-                                    <li>Google + </li>
-                                    <li>Pinterest  </li>
-                                    <li>Youtube </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
+                <!-- .container -->
             </div>
-            <!-- /.container -->
-        </nav>
-
+            <!-- End link section -->
+            <div class="bravo-branding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <a href="#" class="bravo-link"></a>
+                        </div>
+                        <div class="col-xs-5 bravo-head-serch">
+                            <div class="input-group">
+                                <div class="input-group-addon clear-input-prop">
+                                    <!--                                    <select class="selectpicker form-control" data-live-search="true" title="Please select a lunch ..." style="width:100%">
+                                                                            <option>All Categories</option>
+                                                                        </select>-->
+                                    <select class="selectpicker form-control" data-live-search="true" title="Please select a category ..." style="width:100%" ng-change="showProductsByCategory()" ng-model="category.name">
+                                        <!--                                        <option>All Categories</option>-->
+                                        <option ng-repeat=" data in catagories" value="{{data.name}}">{{data.name}}</option> <!-- interpolation -->
+                                    </select>
+                                </div><!-- /btn-group -->
+                                <input type="text" class="form-control" aria-label="...">
+                                <span class="input-group-addon search-btn" ><i class="fa fa-search"></i></span>
+                            </div><!-- /input-group -->
+                        </div>
+                        <div class="col-xs-1 no-pad">
+                            <a class="btn bravo-clean-green-btn btn-default">Register <i class="fa fa-chevron-down"></i></a>
+                        </div>
+                        <div class="col-xs-4 no-pad bravo-x-parent">
+                            <div>
+                                <div class=""><a href="#myaccount" class="bravo-x-links"><i class="fa fa-user"></i> <span>MY ACCOUNT</span></a></div>
+                                <div class=""><a href="#trackorder" class="bravo-x-links"><i class="fa fa-map-marker"></i> <span>TRACK ORDER</span></a></div>
+                                <div class=""><a  href="#login" class="bravo-x-links"><i class="fa fa-lock"></i> <span>LOGIN</span></a></div>
+                                <div class=""><a   href="#cart" class="btn bravo-full-green-btn btn-default">CART <i class="fa fa-chevron-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse bravo-navbar " role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle bravo-green" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{translation.shop_anything}}<span class="fa fa-chevron-down"></span>  </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-8">
+                            <ul class="bravo-nav-links">
+                                <li class="active" data-rel=".menu-link-1"><a href="#recipees"> RECIPEES</a></li>
+                                <li data-rel=".menu-link-2"><a  href="#ramadan">RAMADAN</a></li>
+                                <li data-rel=".menu-link-3"><a  href="#grocery"> GROCERY</a></li>
+                                <li data-rel=".menu-link-3"><a href="#drinks"> DRINKS</a></li>
+                                <li data-rel=".menu-link-3"><a href="#vegetables"> VEGETABLES</a></li>
+                                <li data-rel=".menu-link-3"><a href="#fruits"> FRUITS</a></li>
+                                <li data-rel=".menu-link-3"><a href="#breads"> BREADS</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-2 pull-right">
+                            <a class="btn bravo-white-btn btn-default pull-right">Book a Delivery</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!-- sub menus -->
+            <div class="container">
+                <div class="col-xs-12 bravo-sublink menu-link-1 active">
+                    <a>Featured</a><a>Top Rated</a><a>Newest</a><a>Local/Baku/Ganja/Lenkeran</a> <a>Healthy Food</a> <a>Seasonal</a> <a>Kids Menu</a><a>My Saved Recipe</a><a>My Favorites</a>
+                </div>
+                <div class="col-xs-12 bravo-sublink menu-link-2">
+                    <a>Featured</a><a>Top Rated</a><a>Newest</a><a>Local/Baku/Ganja/Lenkeran</a> <a>Healthy Food</a> <a>Seasonal</a> <a>Kids Menu</a><a>My Saved Recipe</a><a>My Favorites</a>
+                </div>
+                <div class="col-xs-12 bravo-sublink menu-link-3">
+                    <a>Featured</a><a>Top Rated</a><a>Newest</a><a>Local/Baku/Ganja/Lenkeran</a> <a>Healthy Food</a> <a>Seasonal</a> <a>Kids Menu</a><a>My Saved Recipe</a><a>My Favorites</a>
+                </div>
+            </div>
+            <!-- -->
+        </header>
         <!-- Page Content -->
         <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-3">
-                    <p class="lead">Main Menu</p>
-                    <div class="list-group">
-                        <a    class="list-group-item" href="#">Top n Products</a>
-
-
-                        <a    class="list-group-item" href="#">Latest Products</a>
-
-
-                        <a    class="list-group-item" href="#">Whats New</a>
-
-
-                        <a    class="list-group-item" href="#">Top n most inquired products</a>
-
-
-                        <a    class="list-group-item" href="#">Featured products</a>
-
-
-                        <a    class="list-group-item" href="#">Most wanted</a>
-
-
-                        <a    class="list-group-item" href="#">Contact Us</a>
-
-
-                        <a    class="list-group-item" href="#">View images of the stores and locations</a>
-
-
-                        <a    class="list-group-item" href="#">Latest news</a>
-
-
-                        <a    class="list-group-item" href="#">Wish List</a>
-
-
-                        <a    class="list-group-item" href="#">Promotions</a>
-
-
-                        <a    class="list-group-item" href="#">Offers</a>
-
-
-                        <a    class="list-group-item" href="#">Coming Soon products</a>
-
-
-                        <a    class="list-group-item" href="#">Now available</a>
-
-                        <a    class="list-group-item" href="#">Details and contact information by store wise</a>
-                        <a    class="list-group-item" href="#">See the list of products available with the stores</a>
-                        <a    class="list-group-item" href="#">Inquires forms</a>
-                        <a    class="list-group-item" href="#">Suggestion and complaints</a>
-                        <a    class="list-group-item" href="#">Expert tips</a>
-                        <a    class="list-group-item" href="#">Download section</a>
-                        <a    class="list-group-item" href="#">Subscribe news letters</a>
-                    </div>
-                </div>
-
-                <div class="col-md-9">
-
-                    <div class="row carousel-holder">
-
-                        <div class="col-md-12">
-                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <img class="slide-image" src="images/item-slider.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img class="slide-image" src="images/item-slider.jpg" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img class="slide-image" src="images/item-slider.jpg" alt="">
-                                    </div>
-                                </div>
-                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                                </a>
-                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/item-product.jpg" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$24.99</h4>
-                                    <h4><a href="item.html">First Product</a>
-                                    </h4>
-                                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">15 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/item-product.jpg" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$64.99</h4>
-                                    <h4><a href="item.html">Second Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">12 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/item-product.jpg" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$74.99</h4>
-                                    <h4><a href="item.html">Third Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">31 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/item-product.jpg" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$84.99</h4>
-                                    <h4><a href="item.html">Fourth Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">6 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <div class="thumbnail">
-                                <img src="images/item-product.jpg" alt="">
-                                <div class="caption">
-                                    <h4 class="pull-right">$94.99</h4>
-                                    <h4><a href="item.html">Fifth Product</a>
-                                    </h4>
-                                    <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div class="ratings">
-                                    <p class="pull-right">18 reviews</p>
-                                    <p>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star"></span>
-                                        <span class="glyphicon glyphicon-star-empty"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4 col-lg-4 col-md-4">
-                            <h4><a href="#">Like this template?</a>
-                            </h4>
-                            <p>If you like this template, then check out <a target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this tutorial</a> on how to build a working review system for your online store!</p>
-                            <a class="btn btn-primary" target="_blank" href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">View Tutorial</a>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+            <div ng-view></div>
         </div>
+
+
+
+
         <!-- /.container -->
+        <!-- Page Content end -->
 
-        <div class="container">
-
-            <hr>
-
-            <!-- Footer -->
-            <footer>
-                <div class="row">
-                    <div class="col-lg-12">
+        <!-- Footer -->
+        <footer>
+            <div class="col-xs-12 foot-green">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-3 "><p>&nbsp;</p></div>
+                        <div class="col-xs-4 no-pad"><h4><b>{{translation.sign_up}}</b>{{translation.exclusive_news}}</h4></div>
+                        <div class="col-xs-3 ">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="{{translation.email}}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">{{translation.sign_up}}</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="foot-details">
+                    <div class="col-md-2">
+                        <b>Our Products</b>
+                        <p>Our Quality standards </p>
+                        <p>Our product lines </p>
+                        <p>Locally grown </p>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Recipees</b>
+                        <p>Featured </p>
+                        <p>Top rated </p>
+                        <p>Newest</p>
+                        <p>Local  / Baku/ Ganja / Lenkeran </p>
+                        <p>Italian / Chinese / French  </p>
+                        <p>Healthy Food</p>
+                        <p>Seasonal</p>
+                        <p>Kids Menu </p>
+                        <p>My saved recipe </p>
+                        <p>My favorites  </p>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Our Account</b>
+                        <p>Your Account</p>
+                        <p>Personal information</p>
+                        <p>Addresses</p>
+                        <p>Discount</p>
+                        <p>Orders history</p>
+                        <p>Addresses</p>
+                        <p>Search Terms</p>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Our Products</b>
+                        <p>Our Quality standards Our product lines Locally grown </p>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Our Products</b>
+                        <p>Our Quality standards Our product lines Locally grown </p>
+                    </div>
+                    <div class="col-md-2">
+                        <b>Our Products</b>
+                        <p>Our Quality standards Our product lines Locally grown </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 foot-note">
+                <div class="container">
+                    <div class="col-xs-4 no-pad">
+                        <img src="image/pay/ax.png">
+                        <img src="image/pay/mc.png">
+                        <img src="image/pay/mtro.png">
+                        <img src="image/pay/ppl.png">
+                        <img src="image/pay/visa.png">
+                    </div>
+                    <div class="col-xs-4 no-pad">
                         <p>Copyright &copy; Your Website 2014</p>
                     </div>
+                    <div class="col-xs-4 no-pad">
+                        <div class="pull-right">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-pinterest"></i>
+                            <i class="fa fa-google"></i>
+                            <i class="fa fa-tumbler"></i>
+                        </div>
+                    </div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-        </div>
-        <!-- /.container -->
+        <!-- Angular js -->
+        <script src="js/angular.1.3.15.min.js"></script>
+        <script src="js/angular-route.1.3.15.min.js"></script>       
+        <script src="js/angular-resource.1.3.15.min.js"></script>   
+
 
         <!-- jQuery -->
-        <script src="js/jquery.js"></script>
+
+        <script src="app/app.js"></script>
+        <script src="app/config.js"></script>
+        <script src="app/controllers/appCtrl.js"></script>
+        <!--                <script src="app/controllers/homeCtrl.js"></script>-->
+        <script src="app/controllers/aboutCtrl.js"></script>
+        <!--        <script src="app/controllers/maincontentcontroller.js"></script>-->
+        <script src="app/services/localeService.js"></script>
+        <script src="app/services/productServices.js"></script>
+        <script src="js/jquery.js"></script> 
+        <script src="js/script.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
+
+
 
     </body>
 

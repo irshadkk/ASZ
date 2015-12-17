@@ -1,0 +1,185 @@
+<div>
+    <!-- products -->
+    <div class="row bravo-product-parent-div ">
+        <div class="col-xs-12">
+            <div class="bravo-rec-prod">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li ng-click="showTabProducts('KNORR')" role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">{{translation.top_products}}</a></li>
+                    <li ng-click="showTabProducts('KDD')" role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">{{translation.latest_products}}</a></li>
+                    <li ng-click="showTabProducts('KINDER')" role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">{{translation.whats_new}}</a></li>
+                    <li ng-click="showTabProducts('SCHOLL')" role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">{{translation.top_most_inquired_products}}</a></li>
+                    <li ng-click="showTabProducts('CLASSIC')" role="presentation"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">{{translation.featured_products}}</a></li>
+                    <li ng-click="showTabProducts('SATIN CARE')" role="presentation"><a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab">{{translation.most_wanted}}</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+                        <div ng-repeat="item in products ">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/top{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> 
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab2">
+
+                        <div ng-repeat="item in products |limitTo:4">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/prod{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab3">
+
+                        <div ng-repeat="item in products |limitTo:4">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/prod{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab4">
+
+                        <div ng-repeat="item in products |limitTo:4">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/prod{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab5">
+
+                        <div ng-repeat="item in products |limitTo:4">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/prod{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab6">
+
+                        <div ng-repeat="item in products |limitTo:4">
+                            <div class="bravo-rec-item">
+                                <img src="image/prod/prod{{$index}}.png">
+                                <span>{{item.Name}}</span>
+                                <div class="opt-panel-div">
+                                    <span class="bravo-rec-desc">{{item.SKU}}</span>
+                                    <span class="bravo-rec-star">
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star selected"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </span>
+                                </div>
+                                <div class="opt-panel-div last">
+                                    <div>
+                                        <div class="span1" style="background: url('image/currency.png')10% 40% no-repeat;background-size: 15px;">{{item.Price}}</div>
+                                        <div class="span2"><i class="fa fa-gift"></i></div>
+                                        <div class="span1"><a class="red-btn">{{translation.get_it}}</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.bravo-nav-links li').hover(function() {
+            $('.bravo-nav-links li.active').removeClass('active');
+            $(this).addClass('active');
+            $('.bravo-sublink').removeClass('active');
+            $('.bravo-sublink' + $(this).data('rel')).addClass('active');
+        });
+    </script>
+
+</div>
